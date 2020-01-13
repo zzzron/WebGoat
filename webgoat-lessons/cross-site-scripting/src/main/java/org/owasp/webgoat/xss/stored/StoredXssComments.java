@@ -60,7 +60,6 @@ public class StoredXssComments extends AssignmentEndpoint {
         comments.add(new Comment("guest", DateTime.now().toString(fmt), "Can you post a comment, calling webgoat.customjs.phoneHome() ?"));
     }
 
-    //TODO This assignment seems not to be in use in the UI
     @GetMapping(path = "/CrossSiteScriptingStored/stored-xss", produces = MediaType.APPLICATION_JSON_VALUE, consumes = ALL_VALUE)
     @ResponseBody
     public Collection<Comment> retrieveComments() {
@@ -74,7 +73,6 @@ public class StoredXssComments extends AssignmentEndpoint {
         return allComments;
     }
 
-    //TODO This assignment seems not to be in use in the UI
     @PostMapping("/CrossSiteScriptingStored/stored-xss")
     @ResponseBody
     public AttackResult createNewComment(@RequestBody String commentStr) {
